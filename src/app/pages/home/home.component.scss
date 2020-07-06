@@ -1,0 +1,24 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    &__sidebar,
+    &__detail {
+        box-shadow: .1em .1em .5em lightgrey;
+        border-radius: .5em;
+        margin-top: 3em;
+    }
+
+    @media (min-width: 960px) {
+        flex-direction: row;
+
+        &__sidebar {
+            width: 30%;
+        }
+
+        &__detail {
+            width: 65%;
+        }
+    }
+}

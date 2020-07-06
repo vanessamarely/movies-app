@@ -1,0 +1,9 @@
+<section *ngIf="!!moviesList" class="top__movies">
+    <div class="top__movies__list" *ngFor="let movie of moviesList"
+    >
+        <app-movie-item isListed="true" isTop="true" [movie]="movie"></app-movie-item>
+    </div>
+</section>
+<section *ngIf="moviesList === null" class="top__spinner">
+    <mat-spinner></mat-spinner>
+</section>

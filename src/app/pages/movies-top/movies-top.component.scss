@@ -1,0 +1,15 @@
+.top {
+    &__movies {
+        &__list {
+            padding: 1em;
+            width: 96%;
+        }
+    }
+
+    &__spinner {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}

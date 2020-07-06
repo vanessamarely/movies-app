@@ -1,0 +1,25 @@
+.error {
+     height: 50%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+
+    &__element {
+        color: black;
+        font-family: 'Nunito Sans', sans-serif;
+        font-size: 11em;
+    }
+
+    &__message {
+        font-size: 1.3em;
+        padding: 1em;
+        text-align: center;
+        p {
+            strong {
+                font-size:1.5em;
+            }
+        }
+    }
+}

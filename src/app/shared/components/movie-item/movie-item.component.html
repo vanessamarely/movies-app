@@ -1,0 +1,17 @@
+<mat-card [ngClass]="{'list-item': isListed, 'list-top': isTop }" class="card" *ngIf="movie !== null">
+  <div mat-card-avatar class="card__avatar" [ngClass]="{'list-image': isTop}" [ngStyle]="{'background-image': getUrl(movie.movieImage)}">
+  </div>
+  <mat-card-header>
+    <mat-card-title>{{ movie.movieTitle }}</mat-card-title>
+    <mat-card-subtitle>Release Date: <span>{{ movie.movieReleaseDate | date }}</span></mat-card-subtitle>
+  </mat-card-header>
+  <img class="card__image" mat-card-image [src]="movie.movieImage" [alt]="movie.movieTitle" loading="lazy">
+  <mat-card-content class="card__content">
+    <p>
+      {{ movie.movieDescription }}
+    </p>
+  </mat-card-content>
+  <button [ngClass]="{'selected': isListed && movie.isSelected}" class="card__button" mat-fab color="primary" aria-label="delete" (click)="removeMovie(movie)">
+    <mat-icon>delete</mat-icon>
+  </button>
+</mat-card>

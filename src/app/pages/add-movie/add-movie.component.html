@@ -1,0 +1,54 @@
+
+<section>
+    <form class="form" [formGroup]="addMovie" (ngSubmit)="onFormAdd(addMovie.value)" novalidate> 
+        <header class="form__header">
+            <h1>Add Movie</h1>
+            <button class="form__header__button" mat-raised-button color="primary" [disabled]="!addMovie.valid">Save Image</button>
+        </header>
+        <section class="form__fields">
+            <mat-form-field appearance="standard" class="form__fields__item">
+                <mat-label>Movie Title</mat-label>
+                <input matInput formControlName="movieTitle" placeholder="Movie Title">
+                <mat-error>
+                    Movie Title is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="standard" class="form__fields__item">
+                <mat-label>Movie Release</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="movieReleaseDate">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+                <mat-error>
+                    Movie Release is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+            
+            <div class="form__fields__item">
+                <label for="uploadPicture" class="upload-file">
+                    <mat-icon>add_a_photo</mat-icon>
+                    <span>Movie Image</span>
+                </label>
+                <input 
+                    id="uploadPicture"
+                    #fileInput
+                    type="file"
+                    accept="image/*"
+                    (change)="onImageFile($event.target.files)"
+                />
+                <input 
+                    type="hidden"
+                    formControlName="movieImage"
+                />
+                <mat-error *ngIf="!addMovie.controls.movieImage.value">
+                    Movie Image is <strong>required</strong>
+                </mat-error>
+            </div>
+
+            <mat-form-field appearance="standard" class="form__fields__item">
+                <mat-label>Description</mat-label>
+                <textarea matInput formControlName="movieDescription"></textarea>
+            </mat-form-field>
+        </section>
+    </form> 
+</section>

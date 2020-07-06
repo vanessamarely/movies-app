@@ -1,0 +1,10 @@
+<section class="detail" >
+    <button class="detail__button" mat-raised-button color="primary" (click)="addMovie()">Add new movie</button>
+    <app-movie-item *ngIf="movieStore.getSelected()" [movie]="movieStore.getSelected()"></app-movie-item>
+    <div class="detail__message" *ngIf="!movieStore.getSelected()">
+        <p>
+            <mat-icon aria-hidden="false" aria-label="message icon">movie</mat-icon>
+            <span>No item selected</span>
+        </p>
+    </div>
+</section>

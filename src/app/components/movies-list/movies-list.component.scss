@@ -1,0 +1,18 @@
+.movies{
+    &__list {
+        padding: 2em;
+    }
+    
+    &__message {
+        text-align: center;
+        font-size: 1.5em;
+        margin-top: 2em;
+        .mat-icon {
+            vertical-align: bottom;
+            padding-right: .5em;
+        }
+        span {
+            vertical-align: text-top;
+        }
+    }
+}

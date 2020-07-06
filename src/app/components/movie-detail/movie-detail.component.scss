@@ -1,0 +1,25 @@
+.detail {
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+    &__button {
+        align-self: flex-end;
+        margin-bottom: 2em;    
+        
+        @media (min-width: 960px) {
+            max-width: 40%;
+        }
+    }
+    
+    &__message {
+        text-align: center;
+        font-size: 1.5em;
+        .mat-icon {
+            vertical-align: bottom;
+            padding-right: .5em;
+        }
+        span {
+            vertical-align: text-top;
+        }
+    }
+}

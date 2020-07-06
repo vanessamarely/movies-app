@@ -1,0 +1,12 @@
+<section class="movies" *ngIf="movieStore.getMoviesList$ | async as movies">
+    <div  class="movies__list" *ngFor="let movie of movies" (click)="selectedMovie(movie)"
+    >
+        <app-movie-item isListed="true" [movie]="movie"></app-movie-item>
+    </div>
+    <div class="movies__message" *ngIf="!movies.length > 0">
+        <p>
+            <mat-icon aria-hidden="false" aria-label="message icon">movie</mat-icon>
+            <span>No items to show</span>
+        </p>
+    </div>
+</section>

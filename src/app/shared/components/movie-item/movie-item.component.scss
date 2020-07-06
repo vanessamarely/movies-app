@@ -1,0 +1,60 @@
+.card {
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+
+    &__button,
+    &__avatar {
+        display: none;
+    }
+
+    ::ng-deep .mat-card-header {
+        padding: .5em;
+        border-bottom: .1em solid lightgray;
+        &-text {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            flex-direction: row;
+            .mat-card-subtitle {
+                align-self: flex-end;
+                margin-top: 0;
+            }
+        }
+    }
+
+    &.list-item {
+        display: flex;
+        justify-content: space-between;
+        .card__image,
+        .card__content {
+           display: none;
+        }
+        
+        .selected {
+            display: block;
+        }
+
+        &.list-top {
+            justify-content: stretch;
+        }
+
+        .card__avatar {
+            &.list-image {
+                background-size: cover;
+                border-radius: .5em;
+                display: block;
+                height: 4em;
+                width: 4em;
+            }
+        }
+
+        ::ng-deep .mat-card-header {
+            border-bottom: 0;
+            width: 100%;
+            &-text {
+                display: block;
+            }
+        }
+    } 
+}
